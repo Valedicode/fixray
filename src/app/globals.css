@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* fixray system — from Claude Design "Fixray Flow v2".
+   Camera surfaces are dark, reading surfaces are paper; mint is the single AR accent. */
+@theme inline {
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-camera: #161718;
+  --color-paper: #f2f0eb;
+  --color-ink: #141414;
+  --color-ink-2: #3a3d3f;
+  --color-muted: #5f6265;
+  --color-mint: #4fc4a8;
+  --color-mint-ink: #1e8a72;
+
+  --color-green: #1f7a4a;
+  --color-green-bright: #5ad48f;
+  --color-amber: #c97d12;
+  --color-amber-ink: #8f5300;
+  --color-amber-bright: #e0a63a;
+  --color-red: #b92e22;
+  --color-red-bright: #e2574a;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Small uppercase mono label used throughout ("RECOGNIZED", "WHERE TO ORDER"). */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@utility pt-safe {
+  padding-top: max(env(safe-area-inset-top), 16px);
+}
+@utility pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 20px);
+}
+
+@keyframes fx-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
